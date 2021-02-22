@@ -2,9 +2,10 @@
 Este repositório guarda os trabalhos e projetos da disciplina.
 
 # Desenvolvedor(a):
-## Guilherme Michihiro Okushi
+- Guilherme Michihiro Okushi
 
 # Linguagens e Frameworks:
 - Java
 - Python
 - C
+- Dart
