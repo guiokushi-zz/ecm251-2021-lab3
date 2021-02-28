@@ -1,0 +1,13 @@
+P1.Onde está instalado o jdk?
+R:C:\Program Files\Amazon Corretto\jdk11.0.10_9\bin
+P2.Qual o caminho completo até o java e o javac?
+-java:execução
+-javac:Compilador
+P3.Como compilamos um programa em linha de comando?
+-javac [Program name]
+P4.COmo executamos esse programa?
+-java [Program name]
+P5.O que são variáveis de ambiente?
+P6.Qualquer um pode criar variáveis de ambiente?
+P7.Como criar uma variável de ambiente?
+P8.O que é o JAVA_HOME?
