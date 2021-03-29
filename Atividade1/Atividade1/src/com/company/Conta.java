@@ -3,8 +3,7 @@ package com.company;
 import java.util.Scanner;
 
 public class Conta {
-    private int idConta;
-    private int saldo;
+    private double saldo;
     private Scanner scanner = new Scanner(System.in);
     private int op;
     private Usuarios usuarios = new Usuarios();
@@ -15,20 +14,16 @@ public class Conta {
             case 1:
                 break;
             case 2:
-                usuarios.cadastroUsuário();
+                cadastroConta();
                 break;
             default:
                 System.out.println("Opção inválida");
         }
     }
-    public void cadastroConta(String conta){
-        int quant;
-
-        System.out.printf("Quantas contas deseja cadastrar");
-        quant = scanner.nextInt();
-        for (int i = 0; i < quant; i++){
-            System.out.printf("insira as informações da conta nesse padrão ()");
-        }
+    public void cadastroConta(){
+        System.out.println("Saldo inicial: ");
+        saldo = scanner.nextDouble();
+        usuarios.cadastroUsuário(this.saldo);
 
     }
 }
