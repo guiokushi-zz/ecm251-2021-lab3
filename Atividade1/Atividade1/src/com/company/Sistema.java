@@ -27,7 +27,9 @@ public class Sistema {
     //Menu para o usuario
     private void menu(){
         //Cadastro de usuario
-        
+        while(!cadastroCompleto){
+            conta.cadastroConta();
+        }
 
         System.out.printf("1 - Realizar pagamento\n");
         System.out.printf("2 - Receber créditos\n");
