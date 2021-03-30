@@ -31,7 +31,7 @@ public class Sistema {
                 manterExecucao = false;
                 break;
             case 1:
-                //System.out.printf("hello1");
+                conta.consultarConta();
                 break;
             case 2:
                 conta.cadastroConta();

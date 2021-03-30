@@ -35,4 +35,14 @@ public class Conta {
                 System.out.println("Opção inválida");
         }
     }
+
+    public void consultarConta(){
+        int consultaid;
+        int consultapwd;
+        System.out.println("Insira o id da conta: ");
+        consultaid = scanner.nextInt();
+        System.out.println("Insira a senha da conta: ");
+        consultapwd = scanner.nextInt();
+        usuarios.consultarDados(consultaid,consultapwd);
+    }
 }

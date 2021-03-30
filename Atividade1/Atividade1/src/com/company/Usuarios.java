@@ -1,5 +1,6 @@
 package com.company;
 
+import javax.lang.model.element.Element;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -26,10 +27,19 @@ public class Usuarios {
         this.conv = db.size() + 1;
         this.idConta = Integer.toString(conv);
         db.add(this.idConta + ";" + nome + ";" + senha + ";" + email + ";" + saldo);
+        System.out.println();
     }
 
-//    public static String consultarDados(){
-//        return;
-//    }
+    public void consultarDados(int id,int pwd){
+        String idconv = Integer.toString(id);
+        String pwdconv = Integer.toString(pwd);
+        System.out.println("id: " + idconv + "pwd: " + pwdconv);
+        if (db.contains(idconv)){
+            System.out.println(db.get(id-1));
+        }else {
+            System.out.println("Usuário e/ou senha inválidos");
+        }
+    }
+
 
 }
