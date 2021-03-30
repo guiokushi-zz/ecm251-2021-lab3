@@ -7,8 +7,13 @@ public class Conta {
     private Scanner scanner = new Scanner(System.in);
     private int op;
     private Usuarios usuarios = new Usuarios();
+
+    public Conta() {
+
+    }
+
     public void menuConta(){
-        System.out.println("Realize o login ou cadastre o usuário [1]Login [2]Cadastro");
+        System.out.println("Consulte ou cadastre o usuário [1]Login [2]Cadastro");
         op = scanner.nextInt();
         switch (op){
             case 1:
@@ -20,10 +25,27 @@ public class Conta {
                 System.out.println("Opção inválida");
         }
     }
-    public void cadastroConta(){
+    private void cadastroConta(){
         System.out.println("Saldo inicial: ");
         saldo = scanner.nextDouble();
         usuarios.cadastroUsuário(this.saldo);
+        finalizarCadastro();
+    }
 
+    private void finalizarCadastro() {
+        System.out.println("Deseja cadastrar mais algum usuario? [y]Sim [n]Não");
+        String sw = scanner.next();
+        switch (sw){
+            case "y":
+                cadastroConta();
+                break;
+            case "n":
+                for (String dados: usuarios.db){
+                    System.out.println(dados);
+                }
+                break;
+            default:
+                System.out.println("Opção inválida");
+        }
     }
 }
