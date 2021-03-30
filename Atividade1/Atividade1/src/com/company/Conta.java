@@ -12,28 +12,15 @@ public class Conta {
 
     }
 
-    public void menuConta(){
-        System.out.println("Consulte ou cadastre o usuário [1]Login [2]Cadastro");
-        op = scanner.nextInt();
-        switch (op){
-            case 1:
-                break;
-            case 2:
-                cadastroConta();
-                break;
-            default:
-                System.out.println("Opção inválida");
-        }
-    }
-    private void cadastroConta(){
-        System.out.println("Saldo inicial: ");
+    public void cadastroConta(){
+        System.out.println("Qual será o saldo inicial da conta: ");
         saldo = scanner.nextDouble();
         usuarios.cadastroUsuário(this.saldo);
         finalizarCadastro();
     }
 
     private void finalizarCadastro() {
-        System.out.println("Deseja cadastrar mais algum usuario? [y]Sim [n]Não");
+        System.out.println("Deseja cadastrar mais algum usuário? [y]Sim [n]Não");
         String sw = scanner.next();
         switch (sw){
             case "y":
