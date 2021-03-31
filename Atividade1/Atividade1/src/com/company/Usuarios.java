@@ -9,7 +9,7 @@ public class Usuarios {
     private String senha;
     private String email;
     private Scanner scanner = new Scanner(System.in);
-    public ArrayList<String> db = new ArrayList<String>();
+    private ArrayList<String> db = new ArrayList<String>();
     private int conv;
     private String idConta;
 
@@ -31,13 +31,20 @@ public class Usuarios {
     }
 
     public void consultarDados(int id,int pwd){
-        String idconv = Integer.toString(id);
-        String pwdconv = Integer.toString(pwd);
-        System.out.println("id: " + idconv + "pwd: " + pwdconv);
-        if (db.contains(idconv)){
-            System.out.println(db.get(id-1));
+        if (id <= db.size()){
+            String [] dados = db.get(id-1).split(";");
+            int dbconv = Integer.parseInt(dados[0]);
+            int pwdconv = Integer.parseInt(dados[2]);
+            if (id == dbconv && pwd == pwdconv){
+                System.out.println("Nome: " + dados[1]);
+                System.out.println("Email: " + dados[3]);
+                System.out.println("Saldo: R$" + dados[4]);
+
+            }else {
+                System.out.println("Usuário e/ou senha inválidos");
+            }
         }else {
-            System.out.println("Usuário e/ou senha inválidos");
+            System.out.println("Esse id não existe");
         }
     }
 

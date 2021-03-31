@@ -27,9 +27,9 @@ public class Conta {
                 cadastroConta();
                 break;
             case "n":
-                for (String dados: usuarios.db){
-                    System.out.println(dados);
-                }
+//                for (String dados: usuarios.db){
+//                    System.out.println(dados);
+//                }
                 break;
             default:
                 System.out.println("Opção inválida");
