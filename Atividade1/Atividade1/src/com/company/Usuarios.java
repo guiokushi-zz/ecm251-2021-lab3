@@ -51,5 +51,30 @@ public class Usuarios {
         }
     }
 
+    public void armazenarTransacao(int id,int idtran){
+        String [] dados = db.get(id-1).split(";");
+        int dbconv = Integer.parseInt(dados[0]);
+        String idtranconv = Integer.toString(idtran);
+        if (id == dbconv){
+            System.out.println("QRCode gerado com sucesso");
+            System.out.println("Seu número de transação é: " + idtran);
+            String newinfo = db.get(id-1) + ";" + idtranconv;
+            System.out.println(newinfo);
+        }else {
+            System.out.println("Usuário inválidos");
+        }
+        System.out.println(id);
+        System.out.println(idtran);
+    }
+    public void receberPagamento (int id){
+
+    }
+    private boolean checarValidade(int id){
+        if (id <= db.size()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
 }
