@@ -13,16 +13,18 @@ public class Usuarios {
     private int conv;
     private String idConta;
 
+    //Questionario para pegar informações do cliente
     public void cadastroUsuário(double saldo){
         System.out.println("Nome do usuário: ");
-        this.nome = scanner.next();
+        this.nome = scanner.nextLine();
         System.out.println("senha: ");
-        this.senha = scanner.next();
+        this.senha = scanner.nextLine();
         System.out.println("email: ");
-        this.email = scanner.next();
+        this.email = scanner.nextLine();
         armazenarDados(saldo,this.nome,this.senha,this.email);
     }
 
+    //Armazenartodas as informações do cliente
     private void armazenarDados(double saldo, String nome, String senha, String email) {
         this.conv = db.size() + 1;
         this.idConta = Integer.toString(conv);
@@ -30,6 +32,7 @@ public class Usuarios {
         System.out.println();
     }
 
+    //Consulta dados do cliente usando o id da contae a senha
     public void consultarDados(int id,int pwd){
         if (id <= db.size()){
             String [] dados = db.get(id-1).split(";");

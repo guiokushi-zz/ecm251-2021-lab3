@@ -23,7 +23,7 @@ public class Sistema {
         }
     }
 
-
+    //Verifica a opção escolhida pelo usuário
     private void avaliarOpcao(int opcao){
         //Avalia a escolha do usuário
         switch (opcao){

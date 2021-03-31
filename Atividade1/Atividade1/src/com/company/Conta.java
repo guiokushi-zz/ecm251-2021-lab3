@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class Conta {
     private double saldo;
     private Scanner scanner = new Scanner(System.in);
-    private int op;
     private Usuarios usuarios = new Usuarios();
 
+    //Constructor da Conta()
     public Conta() {
-
+        this.saldo = 0;
     }
 
     public void cadastroConta(){
