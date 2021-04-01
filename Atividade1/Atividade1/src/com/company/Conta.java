@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Conta {
@@ -46,7 +47,7 @@ public class Conta {
         usuarios.consultarDados(consultaid,consultapwd);
     }
 
-    public void tras(){
-        usuarios.trasf();
+    public ArrayList devolvedb(){
+        return usuarios.devolvedbu();
     }
 }

@@ -7,7 +7,7 @@ public class Sistema {
     private int opcao;
     private Scanner scanner = new Scanner(System.in);
     private Conta conta = new Conta();
-
+    private Transacao transacao = new Transacao();
 
     //Parametros iniciais
     public Sistema() {
@@ -39,7 +39,8 @@ public class Sistema {
             case 3:
                 break;
             case 4:
-                conta.tras();
+                transacao.recdb(conta.devolvedb());
+                transacao.testao();
                 break;
             default:
                 System.out.printf("Opção inválida, tente novamente\n");

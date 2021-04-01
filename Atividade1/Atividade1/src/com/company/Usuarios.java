@@ -51,8 +51,8 @@ public class Usuarios {
         }
     }
 
-    public void trasf(){
-        System.out.println(db.get(0));
+    public ArrayList devolvedbu(){
+        return db;
     }
 
 
