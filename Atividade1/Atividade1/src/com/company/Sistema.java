@@ -7,7 +7,7 @@ public class Sistema {
     private int opcao;
     private Scanner scanner = new Scanner(System.in);
     private Conta conta = new Conta();
-    private Transacao transacao = new Transacao();
+
 
     //Parametros iniciais
     public Sistema() {
@@ -39,7 +39,7 @@ public class Sistema {
             case 3:
                 break;
             case 4:
-                transacao.recebeCredito();
+                conta.tras();
                 break;
             default:
                 System.out.printf("Opção inválida, tente novamente\n");
@@ -48,12 +48,12 @@ public class Sistema {
 
     //Menu para o usuario
     private void menu(){
-        System.out.println("Bem-vindo a QRBank");
+        System.out.printf("Bem-vindo a QRBank\n");
         System.out.println("-----Selecione uma das operações abaixo-----");
         System.out.println("1 - Consultar usuário");
         System.out.println("2 - Cadastrar usuário");
-        System.out.println("3 - Realizar pagamento");
-        System.out.println("4 - Receber pagamento");
+        System.out.printf("3 - Realizar pagamento\n");
+        System.out.printf("4 - Receber créditos\n");
         System.out.println("0 - Sair do sistema");
     }
 }

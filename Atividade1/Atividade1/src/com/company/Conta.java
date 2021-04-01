@@ -45,4 +45,8 @@ public class Conta {
         consultapwd = scanner.nextInt();
         usuarios.consultarDados(consultaid,consultapwd);
     }
+
+    public void tras(){
+        usuarios.trasf();
+    }
 }
