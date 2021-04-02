@@ -35,11 +35,14 @@ public class Sistema {
                 break;
             case 2:
                 conta.cadastroConta();
+                transacao.recdb(conta.devolvedb());
                 break;
             case 3:
+                System.out.println("Id de quem ira pagar: ");
+                int idsend = scanner.nextInt();
+                transacao.pagarTransferencia(idsend);
                 break;
             case 4:
-                transacao.recdb(conta.devolvedb());
                 System.out.println("Informe seu ID: ");
                 int id = scanner.nextInt();
                 String nome = scanner.nextLine();

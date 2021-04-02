@@ -9,6 +9,8 @@ public class Transacao {
     private TranDb tranDb = new TranDb();
     private MontagemTransacao montagemTransacao = new MontagemTransacao();
     private ArmazenarTransacao armazenarTransacao = new ArmazenarTransacao();
+    private Scanner scanner = new Scanner(System.in);
+
     public void recdb(ArrayList db) {
         tranDb.receberDb(db);
     }
@@ -17,4 +19,10 @@ public class Transacao {
         armazenarTransacao.recebTran(montagemTransacao.montarTransacao(SeparadorDeString.separaString(tranDb.teste(id))),id);
     }
 
+    public void pagarTransferencia(int idsend){
+        System.out.println("Insira o QRCode: ");
+        String qrcode = scanner.nextLine();
+        System.out.println(qrcode);
+        System.out.println(SeparadorDeString.retornaId(qrcode));
+    }
 }

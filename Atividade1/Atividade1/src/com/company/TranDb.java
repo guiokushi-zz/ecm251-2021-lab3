@@ -11,4 +11,10 @@ public class TranDb {
     public String teste(int id){
         return trandb.get(id-1);
     }
+
+    public String retornaId(String id){
+        int idconv = Integer.parseInt(id);
+        String [] contaid = trandb.get(idconv-1).split(";");
+        return contaid[0];
+    }
 }
