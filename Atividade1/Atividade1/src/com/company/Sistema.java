@@ -40,7 +40,10 @@ public class Sistema {
                 break;
             case 4:
                 transacao.recdb(conta.devolvedb());
-                transacao.testao();
+                System.out.println("Informe seu ID: ");
+                int id = scanner.nextInt();
+                String nome = scanner.nextLine();
+                transacao.recebcred(id,nome);
                 break;
             default:
                 System.out.printf("Opção inválida, tente novamente\n");
