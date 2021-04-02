@@ -7,7 +7,6 @@ import java.util.Scanner;
 public class Transacao {
 //    private Scanner scanner = new Scanner(System.in);
     private TranDb tranDb = new TranDb();
-    private MontagemTransacao montagemTransacao = new MontagemTransacao();
     private ArmazenarTransacao armazenarTransacao = new ArmazenarTransacao();
     private Scanner scanner = new Scanner(System.in);
 
@@ -16,13 +15,18 @@ public class Transacao {
     }
 
     public void recebcred(int id, String nome){
-        armazenarTransacao.recebTran(montagemTransacao.montarTransacao(SeparadorDeString.separaString(tranDb.teste(id))),id);
+        armazenarTransacao.recebTran(MontagemTransacao.montarTransacao(SeparadorDeString.separaString(tranDb.teste(id))),id);
     }
 
-    public void pagarTransferencia(int idsend){
-        System.out.println("Insira o QRCode: ");
-        String qrcode = scanner.nextLine();
-        System.out.println(qrcode);
-        System.out.println(SeparadorDeString.retornaId(qrcode));
+    public void pagarTransferencia(int idsend,String qrcode,String qrcodeId){
+        if (tranDb.retornaValidadeId(Integer.toString(idsend))) {
+            if (tranDb.retornaValidadeId(qrcodeId)) {
+                if (armazenarTransacao.retornaValidadeTransacao(qrcode, qrcodeId)) {
+                    System.out.println("HEEEEEy");
+                }
+            }
+        }else {
+            System.out.println("Sua Id é inválido");
+        }
     }
 }

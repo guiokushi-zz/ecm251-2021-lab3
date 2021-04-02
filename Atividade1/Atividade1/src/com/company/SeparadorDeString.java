@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class SeparadorDeString {
     public static String separaString(String contaPreFormat){
         String [] conta =  contaPreFormat.split(";");

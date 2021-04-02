@@ -29,7 +29,7 @@ public class Usuarios {
         this.conv = db.size() + 1;
         this.idConta = Integer.toString(conv);
         db.add(this.idConta + ";" + nome + ";" + senha + ";" + email + ";" + saldo);
-        System.out.println();
+        System.out.println("Seu id de conta é: " + idConta);
     }
 
     //Consulta dados do cliente usando o id da contae a senha

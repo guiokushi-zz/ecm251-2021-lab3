@@ -15,4 +15,15 @@ public class ArmazenarTransacao {
         System.out.println(armazenaTran.get(id-1));
     }
 
+
+    public boolean retornaValidadeTransacao(String qrcode,String qRCodeId){
+        int qRcodeIdconv = Integer.parseInt(qRCodeId);
+        if (armazenaTran.get(qRcodeIdconv-1).equals(qrcode)){
+            System.out.println("QRCode validado com sucesso!");
+            return true;
+        }else {
+            System.out.println("QRCode não pode ser validado");
+            return false;
+        }
+    }
 }

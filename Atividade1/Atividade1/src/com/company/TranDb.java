@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class TranDb {
     private ArrayList<String> trandb = new ArrayList<String>();
-    private int d;
     public void receberDb(ArrayList db){
         trandb = db;
     }
@@ -12,9 +11,16 @@ public class TranDb {
         return trandb.get(id-1);
     }
 
-    public String retornaId(String id){
+    public boolean retornaValidadeId(String id){
         int idconv = Integer.parseInt(id);
         String [] contaid = trandb.get(idconv-1).split(";");
-        return contaid[0];
+        int contaIdConv = Integer.parseInt(contaid[0]);
+        if (idconv == contaIdConv){
+            System.out.println("Conta verificada com sucesso!");
+            return true;
+        }else {
+            System.out.println("Não foi possivel verificar a conta");
+            return false;
+        }
     }
 }

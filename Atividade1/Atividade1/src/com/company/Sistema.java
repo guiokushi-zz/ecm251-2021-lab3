@@ -40,7 +40,8 @@ public class Sistema {
             case 3:
                 System.out.println("Id de quem ira pagar: ");
                 int idsend = scanner.nextInt();
-                transacao.pagarTransferencia(idsend);
+                String qrcode = MontagemTransacao.pegarQRCode();
+                transacao.pagarTransferencia(idsend,qrcode,SeparadorDeString.retornaId(qrcode));
                 break;
             case 4:
                 System.out.println("Informe seu ID: ");
