@@ -5,14 +5,17 @@ import java.util.ArrayList;
 public class TranDb {
     private ArrayList<String> trandb = new ArrayList<String>();
 
+    //Recebe os dados do banco de dados principal
     public void receberDb(ArrayList db){
         trandb = db;
     }
 
+    //Retorna informações de um usuario especifico
     public String teste(int id){
         return trandb.get(id-1);
     }
 
+    //Valida se o id informado existe ou não
     public boolean retornaValidadeId(String id){
         int idconv = Integer.parseInt(id);
         String [] contaid = trandb.get(idconv-1).split(";");
@@ -24,6 +27,7 @@ public class TranDb {
         }
     }
 
+    //Valida se a conta que ira enviar o dinheiro tem saldo o suficiente na conta
     public boolean retornaSaldoSuficiente(int idsend,double valor){
         double valorSend = SeparadorDeString.retornaSaldo(trandb.get(idsend-1));
         if (valor <= valorSend){
@@ -33,14 +37,14 @@ public class TranDb {
         }
     }
 
+    //Atualiza as informações do tranDb com os dados pós-transferência
     public void atualizarDb(int recId, int sendId,String recConta, String sendConta){
-        System.out.println("---------TranDb------------");
-        System.out.println(recId + "  " + sendId);
-        System.out.println(recConta + "   " + sendConta);
-        trandb.add(recId-1,recConta);
-        trandb.add(sendId-1,sendConta);
-        for (String dados: trandb){
-            System.out.println(dados);
-        }
+        trandb.set(recId-1,recConta);
+        trandb.set(sendId-1,sendConta);
+    }
+
+    //Retorna o tranDb
+    public ArrayList devolveTranDb(){
+        return trandb;
     }
 }

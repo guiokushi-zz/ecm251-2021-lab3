@@ -38,10 +38,12 @@ public class Sistema {
                 transacao.recdb(conta.devolvedb());
                 break;
             case 3:
+                transacao.recdb(conta.devolvedb());
                 System.out.println("Id de quem ira pagar: ");
                 int idsend = scanner.nextInt();
                 String qrcode = MontagemTransacao.pegarQRCode();
                 transacao.pagarTransferencia(idsend,qrcode,SeparadorDeString.retornaId(qrcode));
+                conta.recebDbAtualizado(transacao.devolveTDb());
                 break;
             case 4:
                 System.out.println("Informe seu ID: ");

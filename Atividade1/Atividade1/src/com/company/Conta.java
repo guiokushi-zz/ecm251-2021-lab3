@@ -13,6 +13,7 @@ public class Conta {
         this.saldo = 0;
     }
 
+    //Armazenar o saldo da conta que será criada e mandar as informações para serem armazenadas na classe Usuarios
     public void cadastroConta(){
         System.out.println("Qual será o saldo inicial da conta: ");
         saldo = scanner.nextDouble();
@@ -20,6 +21,7 @@ public class Conta {
         finalizarCadastro();
     }
 
+    //Avalia se o usuario deseja criar mais de uma conta por vez
     private void finalizarCadastro() {
         System.out.println("Deseja cadastrar mais algum usuário? [y]Sim [n]Não");
         String sw = scanner.next();
@@ -28,15 +30,13 @@ public class Conta {
                 cadastroConta();
                 break;
             case "n":
-//                for (String dados: usuarios.db){
-//                    System.out.println(dados);
-//                }
                 break;
             default:
                 System.out.println("Opção inválida");
         }
     }
 
+    //Armazenar dados para a consulta do usuario
     public void consultarConta(){
         int consultaid;
         int consultapwd;
@@ -47,7 +47,13 @@ public class Conta {
         usuarios.consultarDados(consultaid,consultapwd);
     }
 
+    //Devolve informações de todos os clientes para ser utilizado nas transações
     public ArrayList devolvedb(){
         return usuarios.devolvedbu();
+    }
+
+    //Atualiza o banco de dados principal com as informações pós-transação dos clientes
+    public void recebDbAtualizado(ArrayList dbAtual){
+        usuarios.recebeDbAtual(dbAtual);
     }
 }
